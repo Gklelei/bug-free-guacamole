@@ -12,13 +12,6 @@ class User(db.Model):
     def __repr__(self):
         return f"User(id={self.id}, name={self.name}, email={self.email})"
 
-    def to_dict(self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "email": self.email,
-        }
-
 class Todo(db.Model):
     __tablename__ = 'todos'
 
@@ -31,12 +24,3 @@ class Todo(db.Model):
 
     def __repr__(self):
         return f"Todo(id={self.id}, title={self.title}, status={self.status})"
-
-    def to_dict(self):
-        return {
-            "id": self.id,
-            "title": self.title,
-            "description": self.description or "",
-            "status": self.status,
-            "user_id": self.user_id
-        }
