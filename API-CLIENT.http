@@ -1,0 +1,31 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=PyCharm
+
+### POST -> Register User
+POST localhost:3030/api/auth/register
+Content-Type: application/json
+
+{
+"name": "lelei gideon",
+  "email": "lelei1@gmail.com",
+  "password": "12345678"
+}
+
+
+### POST -> Login User
+POST localhost:3030/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "lelei1@gmail.com",
+  "password": "12345678"
+}
+
+### POST -> Login User
+POST localhost:3030/api/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjExMjQzNywianRpIjoiMDNhYTVmZTEtN2ExZi00MDUyLWEzMWYtYmFkNGM0NmI3MWNhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3NzYxMTI0MzcsImNzcmYiOiJjODIwYmI1ZC0zOGFhLTRmMTQtYWI1My1kNDYwNmRjYjM3YWYiLCJleHAiOjE3NzYxMTYwMzd9.xSDvtS_pm0210vGUmNs7xVmgY-Dz7eZukTtvqusYvyk
+
+### POST -> Login User
+GET localhost:3030/api/auth/validate-token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjExMjg5MiwianRpIjoiNzAxMzVmZTEtZjQ3Ny00OTE3LTk0OGUtNmU0Mzk1NjA3M2ZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3NzYxMTI4OTIsImNzcmYiOiI3YTVkNTQ0OC0wOTI2LTRhOWItODNhOC04NjRmMDYxYTczNGMiLCJleHAiOjE3NzYxMTY0OTJ9.OZuU9iQp9-YY68Hwcj5tHGq3U5Z7yaVxvW6nkDZErcE
