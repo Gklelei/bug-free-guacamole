@@ -24,3 +24,9 @@ class Todo(db.Model):
 
     def __repr__(self):
         return f"Todo(id={self.id}, title={self.title}, status={self.status})"
+
+
+class Token(db.Model):
+    __tablename__ = 'tokens'
+    id = db.Column(db.Integer, primary_key=True)
+    token = db.Column(db.String, nullable=False, unique=True)

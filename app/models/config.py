@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import  MetaData
 from flask_marshmallow import Marshmallow
+from flask_restful import Api
 
 naming_convention={
         "ix": 'ix_%(column_0_label)s',
@@ -11,5 +12,7 @@ naming_convention={
     }
 
 metadata = MetaData(naming_convention=naming_convention)
+
+api = Api()
 ma = Marshmallow()
 db = SQLAlchemy(metadata=metadata)

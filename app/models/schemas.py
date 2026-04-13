@@ -1,4 +1,4 @@
-from app.models import db,User, ma,Todo
+from app.models import User, ma,Todo
 
 class UserSchema(ma.SQLAlchemySchema):
     class Meta:
@@ -20,3 +20,11 @@ class TodoSchema(ma.SQLAlchemySchema):
     description = ma.auto_field()
     status = ma.auto_field()
     user_id = ma.auto_field()
+
+
+
+todo_schema = TodoSchema()
+todos_schema = TodoSchema(many=True)
+
+user_schema = UserSchema()
+users_schema = UserSchema(many=True)
