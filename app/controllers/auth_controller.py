@@ -3,7 +3,8 @@ from flask_restful import Resource
 from app.models import user_schema, db, User, Token
 from marshmallow import ValidationError
 from flask_bcrypt import generate_password_hash,check_password_hash
-from flask_jwt_extended import create_access_token,get_jwt_identity
+from flask_jwt_extended import create_access_token,get_jwt_identity,jwt_required,get_jwt
+
 
 
 class AuthRegisterController(Resource):
@@ -63,7 +64,7 @@ class AuthLoginController(Resource):
 
             response = make_response({"message":"Login successful"}, 200)
             response.set_cookie(
-                "Bearer",
+                "access_token_cookie",
                 token,
                 httponly=True,
                 secure=False,
@@ -77,7 +78,7 @@ class AuthLoginController(Resource):
             return {"message": "Internal server error"}, 500
 
 
-from flask_jwt_extended import jwt_required, get_jwt
+
 
 
 class AuthLogoutController(Resource):
