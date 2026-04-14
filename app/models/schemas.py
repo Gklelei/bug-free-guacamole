@@ -17,11 +17,9 @@ class TodoSchema(ma.SQLAlchemySchema):
 
     id = ma.auto_field(dump_only=True)
     title = ma.auto_field()
-    description = ma.auto_field()
+    description = ma.auto_field(load_default=None)
     status = ma.auto_field()
-    user_id = ma.auto_field()
-
-
+    user_id = ma.auto_field(required=False,load_default=None)
 
 todo_schema = TodoSchema()
 todos_schema = TodoSchema(many=True)
