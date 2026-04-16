@@ -82,7 +82,7 @@ class AuthLoginController(Resource):
 
 
 class AuthLogoutController(Resource):
-    @jwt_required()  # note the () — jwt_required is a decorator factory
+    @jwt_required()
     def post(self):
         try:
             jti = get_jwt()["jti"]

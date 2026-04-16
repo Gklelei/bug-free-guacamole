@@ -1,3 +1,5 @@
+from marshmallow.fields import Email
+
 from app.models import User, ma,Todo
 
 class UserSchema(ma.SQLAlchemySchema):
